@@ -1,0 +1,12 @@
+.a {
+  width: 200px;
+  height: 400px;
+  background-color: #ccccff;
+}
+
+.b {
+  width: 50vw;
+  height: 50vmax;
+  content: "width: '20vmax'";
+  background-color: #a6ffb2;
+}

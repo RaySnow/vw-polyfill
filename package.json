@@ -1,0 +1,30 @@
+{
+  "name": "vw-polyfill",
+  "version": "0.0.1",
+  "title": "Making viewport units (vw) work in unSupported browser",
+  "description": "Making viewport units (vw) work in unSupported browser",
+  "homepage": "https://github.com/RaySnow/vw-polyfill",
+  "author": {
+    "name": "hupo@fanhaoyue.com",
+    "url": "https://github.com/RaySnow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RaySnow/vw-polyfill.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vw",
+    "vh",
+    "vw-polyfill",
+    "polyfill",
+    "viewport"
+  ],
+  "main": "./vw-polyfill.js",
+  "files": [
+    "vw-polyfill.js"
+  ],
+  "devDependencies": {
+    "gulp": "^3.17.1"
+  }
+}
