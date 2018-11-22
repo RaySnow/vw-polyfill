@@ -1,12 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .a {
-  width: 200px;
-  height: 400px;
-  background-color: #ccccff;
+  width: 25vw;
+  height: 25vw;
+  background-color: #ff3336;
 }
 
 .b {
   width: 50vw;
-  height: 50vmax;
-  content: "width: '20vmax'";
-  background-color: #a6ffb2;
+  height: 50vw;
+  background-color: #5f98ff;
 }
+

@@ -12,8 +12,8 @@
     }
     .c {
       width: 100vw;
-      height: 100vmax;
-      background-color: green;
+      height: 100vw;
+      background-color: #f8ff38;
     }
   </style>
   <style>
@@ -30,71 +30,17 @@
 </head>
 <body>
 <div class="a" style="font-size:16px;">
-  this is test div a
+  test div a
 </div>
 
-<div class="b" style="font-size:20px;">
-  this is test div B
+<div class="b" style="font-size:22px;">
+  test div B
 </div>
 
-<div class="c" style="font-size:20px;">
-  this is test div c
+<div class="c" style="font-size:28px;">
+  test div c
 </div>
 
-<!--todo   1. 判断是否支持vw vh 的办法 -->
-<!--todo   1. 外链样式 2.内嵌样式 3.标签样式（可不支持）-->
-<!--todo   样式需要按照顺序加载 -->
-<!--todo   样式加载、屏幕翻转等各种情况下重新处理 -->
-
-<script>
-  var viewportUnitExpression = /([+-]?[0-9.]+)(vh|vw|vmin|vmax)/g;
-//  var urlExpression = /(https?:)?\/\//;
-  setTimeout(function () {
-    var styleSheet = document.styleSheets[0];
-//    styleSheet.insertRule('.a {color: red;}', 0); //添加到第一个
-//    styleSheet.insertRule('.b {width: 100px;}', styleSheet.rules.length);//添加到最后一个
-//    var cssRules = styleSheet.cssRules; //cssRules.length可返回CSS规则的个数
-//    var cssRules = styleSheet.rules;
-//    var cssRule = cssRules[0];
-    function getCors(url, success, error) {
-      var xhr = new XMLHttpRequest();
-        // XHR for Chrome/Firefox/Opera/Safari.
-      xhr.open('GET', url, true);
-      xhr.onload = success;
-      xhr.onerror = error;
-      xhr.send();
-      return xhr;
-    }
-    var ownerNode = styleSheet.ownerNode;
-    getCors(ownerNode.href, function() {
-      var style = document.createElement('style');
-      style.type = 'text/css';
-      var cssTest = this.responseText;
-      console.log("cssTest: ", cssTest);
-      var cssTest_e = cssTest.replace(/vh|vw|vmin|vmax/g,'px');
-      var textNode = document.createTextNode(cssTest_e);
-      style.appendChild(textNode);
-      var head = document.head || document.getElementsByTagName('head')[0];
-      head.appendChild(style);
-
-
-//   循环查找字符串的位子
-//      var str = "I think of other ages that floated upon the stream of life and love and death";
-//      var positions = new Array();
-//      function searchSubStr(str,subStr){
-//        var pos = str.indexOf(subStr);
-//        while(pos>-1){
-//          positions.push(pos);
-//          pos = str.indexOf(subStr,pos+1);
-//        }
-//      }
-//      searchSubStr(str,"o");
-//      alert(positions);//8,11,29,37,51,64
-
-    });
-  }, 4000)
-
-</script>
-<script src="main.js"></script>
+<!--<script src="vw-polyfill.js"></script>-->
 </body>
 </html>
