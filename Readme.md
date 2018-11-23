@@ -18,13 +18,10 @@ Making viewport units (vw) work in unSupported browser
 
 ## License
 
-viewport-unit-buggyfill is published under the [MIT License](http://opensource.org/licenses/mit-license).
+[MIT License](http://opensource.org/licenses/mit-license).
 
 ## todo
 
-1. 判断是否支持vw vh 的办法 
-2. 外链样式 内嵌样式 标签样式（可不支持）
-3. 样式需要按照顺序加载 
 4. 样式加载、屏幕翻转等各种情况下重新处理 
 5. 使用文档： 布局字体和描述字体
 6. 计算后保留4位小数
