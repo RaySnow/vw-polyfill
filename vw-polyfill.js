@@ -38,7 +38,7 @@
     var isSupport = test_width === width;
     body.removeChild(testEle);
     head.removeChild(styleEle);
-    console.log("is support: ", isSupport);
+    console.log("is support: " + isSupport);
     return isSupport;
   }
 
@@ -48,7 +48,8 @@
     // set 1rem = clientWidth / 100  (1rem = 1vw)
     function setRem() {
       var rem = de.clientWidth / 100;
-      de.style.fontSize = rem + 'px'
+      de.style.fontSize = rem + 'px';
+      console.log("rem: " + rem)
     }
     setRem();
     // reset rem unit on page resize
@@ -74,7 +75,6 @@
 
     // replace vw -> rem
     var replaceVw = function (cssText) {
-      console.log("cssText: ", cssText);
       var vwRe = /([+-]?[0-9.]+)vw/g;
       var vwReOnce = /([+-]?[0-9.]+)vw/;
       var styleNew = doc.createElement('style');
@@ -101,6 +101,7 @@
         replaceVw(this.responseText)
       });
     });
+    console.log("done")
   }
 
   if (!isSupportVw()) {
