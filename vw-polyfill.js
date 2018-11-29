@@ -1,81 +1,69 @@
 (function () {
-  // 当前浏览器是否支持 vw vh
-  function isSupportVw() {
-    var body, head, style_block, test_element, test_results;
-
-    var testVWSupport = function (element, style_block) {
-      var comp_style, width;
-      applyStyleTest(style_block, 'width: 50vw');
-      width = parseInt(window.innerWidth / 2, 10);
-      comp_style = parseInt(testElementStyle(element).width, 10);
-      clearStyleTests(style_block);
-      return comp_style === width;
-    };
-    var applyStyleTest = function (style_block, style) {
-      var new_style, test_style;
-      new_style = "#vminpolyTests { " + style + "; }";
-      if (style_block.styleSheet) {
-        return style_block.styleSheet.cssText = new_style;
-      } else {
-        test_style = document.createTextNode(new_style);
-        return style_block.appendChild(test_style);
-      }
-    };
-    var testElementStyle = function (element) {
-      if (window.getComputedStyle) {
-        return getComputedStyle(element, null);
-      } else {
-        return element.currentStyle;
-      }
-    };
-    var clearStyleTests = function (style_block) {
-      if (style_block.styleSheet) {
-        return style_block.styleSheet.cssText = '';
-      } else {
-        return style_block.innerHTML = '';
-      }
-    };
-
-    test_element = document.createElement('div');
-    test_element.id = "vminpolyTests";
-    body = document.body;
-    body.appendChild(test_element);
-    style_block = document.createElement('style');
-    head = document.getElementsByTagName('head')[0];
-    head.appendChild(style_block);
-    test_results = testVWSupport(test_element, style_block);
-    body.removeChild(test_element);
-    head.removeChild(style_block);
-    console.log("is support: ", test_results);
-    return test_results;
+  var win = window;
+  var doc = win.document;
+  function appendStyle(style, cssText) {
+    if (style.type) {
+      style.type = 'text/css';
+    }
+    if (style.styleSheet) {
+      return style.styleSheet.cssText = cssText;
+    } else {
+      var cssTextNode = doc.createTextNode(cssText);
+      style.appendChild(cssTextNode);
+    }
+  }
+  function getEleStyle(element) {
+    if (win.getComputedStyle) {
+      return getComputedStyle(element, null);
+    } else {
+      return element.currentStyle;
+    }
   }
 
-  // 设置html根元素font-size
+  // is current browser support vw
+  function isSupportVw() {
+    var body = doc.body;
+    var head = doc.getElementsByTagName('head')[0];
+    var testEle = doc.createElement('div');
+    var styleEle = doc.createElement('style');
+    var testCss = "#testVw {  width: 50vw; }";
+    var width = parseInt(win.innerWidth / 2, 10);
+
+    testEle.id = "testVw";
+    body.appendChild(testEle);
+    head.appendChild(styleEle);
+
+    appendStyle(styleEle, testCss);
+    var test_width = parseInt(getEleStyle(testEle).width, 10);
+    var isSupport = test_width === width;
+    body.removeChild(testEle);
+    head.removeChild(styleEle);
+    console.log("is support: ", isSupport);
+    return isSupport;
+  }
+
+  // set html root font-size
   function setRootFontSize() {
-    var docEl = document.documentElement;
-
-    // set 1rem = clientWidth / 100
-    function setRemUnit() {
-      var rem = docEl.clientWidth / 100;
-      docEl.style.fontSize = rem + 'px'
+    var de = doc.documentElement;
+    // set 1rem = clientWidth / 100  (1rem = 1vw)
+    function setRem() {
+      var rem = de.clientWidth / 100;
+      de.style.fontSize = rem + 'px'
     }
-
-    setRemUnit();
-
+    setRem();
     // reset rem unit on page resize
-    window.addEventListener('resize', setRemUnit);
-    window.addEventListener('pageshow', function (e) {
+    win.addEventListener('resize', setRem);
+    win.addEventListener('pageshow', function (e) {
       if (e.persisted) {
-        setRemUnit()
+        setRem()
       }
     })
   }
 
-  // 转换所有样式中的vw -> rem
-  function vmToRem() {
-
-    // 通过ajax重新请求css文件内容
-    var getCors = function (url, success, error) {
+  // replace all vw -> rem
+  function vwToRem() {
+    // get css from url use ajax
+    var getCssText = function (url, success, error) {
       var xhr = new XMLHttpRequest();
       xhr.open('GET', url, true);
       xhr.onload = success;
@@ -84,53 +72,39 @@
       return xhr;
     };
 
-    //   find out and replac all vw to rem
-    var replaceAll = function (cssText) {
-
-      return cssText
-    };
-
     // replace vw -> rem
     var replaceVw = function (cssText) {
-      console.log("cssTest: ", cssText);
+      console.log("cssText: ", cssText);
       var vwRe = /([+-]?[0-9.]+)vw/g;
       var vwReOnce = /([+-]?[0-9.]+)vw/;
-      var style = document.createElement('style');
+      var styleNew = doc.createElement('style');
 
       var vmList = cssText.match(vwRe);
       if (vmList) {
         vmList.forEach(function (item) {
           cssText = cssText.replace(vwReOnce, item.replace("vw", "rem"))
         });
-
-        var textNode = document.createTextNode(cssText);
-        style.type = 'text/css';
-        style.appendChild(textNode);
-        var head = document.head || document.getElementsByTagName('head')[0];
-        head.appendChild(style);
+        appendStyle(styleNew, cssText);
+        var head = doc.head || doc.getElementsByTagName('head')[0];
+        head.appendChild(styleNew);
       }
     };
 
-    var styleSheets = document.styleSheets;
+    var links = doc.getElementsByTagName("link");
+    var styles = doc.getElementsByTagName("style");
     var forEach = [].forEach;
-    forEach.call(styleSheets, function(styleSheet) {
-      var ownerNode = styleSheet.ownerNode || {};
-      if (ownerNode.href) {
-        //handle link tag stylesSheet
-        getCors(ownerNode.href, function () {
-          replaceVw(this.responseText)
-        });
-      } else if (ownerNode.tagName && ownerNode.tagName.toLowerCase() === "style") {
-        //handle style tag stylesSheet
-        replaceVw(ownerNode.textContent)
-      }
+    forEach.call(styles, function(style) {
+        replaceVw(style.textContent)
+    });
+    forEach.call(links, function(link) {
+      getCssText(link.href, function () {
+        replaceVw(this.responseText)
+      });
     });
   }
 
-  // 不支持的处理逻辑
   if (!isSupportVw()) {
-    console.log("========== 嘿，我执行了");
     setRootFontSize();
-    vmToRem()
+    vwToRem()
   }
 })();

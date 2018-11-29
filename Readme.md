@@ -9,6 +9,7 @@ Making viewport units (vw) work in unSupported browser
 
 
 ## Using 
+建议在body开始或最后加载，必须加载在head后面，保证css解析完成后执行
 
 ## Changelog
 
