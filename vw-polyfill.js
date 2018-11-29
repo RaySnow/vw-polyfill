@@ -79,9 +79,9 @@
       var vwReOnce = /([+-]?[0-9.]+)vw/;
       var styleNew = doc.createElement('style');
 
-      var vmList = cssText.match(vwRe);
-      if (vmList) {
-        vmList.forEach(function (item) {
+      var vwList = cssText.match(vwRe);
+      if (vwList) {
+        vwList.forEach(function (item) {
           cssText = cssText.replace(vwReOnce, item.replace("vw", "rem"))
         });
         appendStyle(styleNew, cssText);
