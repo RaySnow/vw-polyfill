@@ -2,40 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>test vw polyfill</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="test.css">
-  <style>
-    .c {
-      width: 100vw;
-      height: 100vw;
-      background-color: #f8ff38;
-    }
-  </style>
-  <style>
-    body {
-      background-color: antiquewhite;
-    }
-  </style>
-  <script src="vconsole.min.js"></script>
-  <script>
-    // init vConsole
-    var vConsole = new VConsole();
-  </script>
+  <title>vw polyfill</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!--<link rel="stylesheet" href="your css file">-->
+  <!--<style>your styles</style>-->
 </head>
 <body>
-<div class="a" style="font-size:16px;">
-  test div a
-</div>
-
-<div class="b" style="font-size:22px;">
-  test div B
-</div>
-
-<div class="c" style="font-size:28px;">
-  test div c
-</div>
-
-<script src="vw-polyfill.js"></script>
+<!-- main -->
+<!-- It is recommended to load vw-polyfill at the bottom of the body tag -->
+<script src="path/to/vw-polyfill.min.js"></script>
 </body>
 </html>
