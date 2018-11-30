@@ -16,11 +16,17 @@ Making viewport units (vw) work in unSupported mobile browsers
 ## Usage 
   1. 下载引用
     下载 vw-polyfill.min.js
-    
+    ```html
+    <body>
+    <!-- main -->
+    <!-- It is recommended to load vw-polyfill at the bottom of the body tag -->
+    <script src="path/to/vw-polyfill.min.js"></script>
+    </body>
+    ```
     建议在body开始或最后加载，必须加载在head后面，保证css解析完成后执行
-  2. gulp
-  3. webpack
-  4. cdn 
+    ![示例](example.jpg)
+    
+  2. npm 
 
 
 ## Changelog
