@@ -1,8 +1,8 @@
 {
   "name": "vw-polyfill",
-  "version": "0.0.1",
-  "title": "Making viewport units (vw) work in unSupported browser",
-  "description": "Making viewport units (vw) work in unSupported browser",
+  "version": "0.0.2",
+  "title": "Make viewport units (vw) work in unsupported mobile browsers",
+  "description": "Make viewport units (vw) work in unsupported mobile browsers",
   "homepage": "https://github.com/RaySnow/vw-polyfill",
   "author": {
     "name": "hupo@fanhaoyue.com",
@@ -16,21 +16,18 @@
   "keywords": [
     "vw",
     "vh",
+    "vmin",
+    "vmax",
+    "px",
     "vw-polyfill",
     "polyfill",
+    "mobile",
+    "flexible",
     "viewport"
   ],
-  "main": "./vw-polyfill.js",
+  "main": "vw-polyfill.js",
   "files": [
     "vw-polyfill.js"
   ],
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.4.0",
-    "gulp-header": "^2.0.5",
-    "gulp-rename": "^1.4.0",
-    "gulp-strip-debug": "^3.0.0",
-    "gulp-uglify": "^3.0.1"
-  },
   "dependencies": {}
 }

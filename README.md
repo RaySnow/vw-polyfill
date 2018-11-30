@@ -1,5 +1,5 @@
 # vw-polyfill
-Making viewport units (vw) work in unSupported mobile browsers
+Make viewport units (vw) work in unsupported mobile browsers
 
 ## purpose
   1. 为了移动端浏览器能安全的使用vw单位实现多屏适配，从而让css代码运行在各种尺寸的手机屏幕上，并且和设计稿保持一致

@@ -1,0 +1,18 @@
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+### Node ###
+npm-debug.log*
+node_modules
+
+### WebStorm ###
+.idea
+
+### other ###
+gulpfile.js
+index.html
+test.css
+test.html
+index.html
