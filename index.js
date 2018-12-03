@@ -38,7 +38,6 @@
     var isSupport = test_width === width;
     body.removeChild(testEle);
     head.removeChild(styleEle);
-    console.log("is support: " + isSupport);
     return isSupport;
   }
 
@@ -49,7 +48,6 @@
     function setRem() {
       var rem = de.clientWidth / 100;
       de.style.fontSize = rem + 'px';
-      console.log("rem: " + rem)
     }
     setRem();
     // reset rem unit on page resize
@@ -101,7 +99,6 @@
         replaceVw(this.responseText)
       });
     });
-    console.log("done")
   }
 
   if (!isSupportVw()) {

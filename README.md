@@ -20,8 +20,6 @@ Make viewport units (vw) work in unsupported mobile browsers
   <script src="path/to/vw-polyfill.min.js"></script>
 </body>
 ```
-    
-  2. npm 
 
   
 ## limitations
@@ -40,8 +38,5 @@ Make viewport units (vw) work in unsupported mobile browsers
 [MIT License](http://opensource.org/licenses/mit-license).
 
 ## TODO
-  1. npm 包
-  2. gulp、webpack打包办法
-  3. cdn
-  4. 多浏览器测试
-  5. 打包和压缩
+  1. gulp、webpack打包办法
+  2. 多浏览器测试
