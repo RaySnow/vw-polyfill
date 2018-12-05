@@ -10,3 +10,5 @@ insert_final_newline = true
 end_of_line = lf
 # editorconfig-tools is unable to ignore longs strings or urls
 max_line_length = null
+
+

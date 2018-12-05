@@ -6,18 +6,16 @@ Make viewport units (vw) work in unsupported mobile browsers
   2. 技术方案为：通过js动态判断当前浏览器是否支持vw单位，如果不支持，把所有css样式中vw转为rem，并设置html font-size为当前浏览器宽度
   的 1/100, 从而使1rem=1vw；
   3. write once run everywhere, 开发者无需考虑多屏适配问题和vw兼容问题
-  4. 使用尽可能简单，代码量尽可能少，尽可能不阻塞页面基础样式和逻辑
+  4. 使用尽可能简单，代码量尽可能少
 
 ## Usage 
   1. 下载引用
     下载 vw-polyfill.min.js
-    建议在body开始或最后加载，必须加载在head后面，保证css解析完成后执行
     
 ```html
 <body>
-  <!-- main -->
-  <!-- It is recommended to load vw-polyfill at the bottom of the body tag -->
   <script src="path/to/vw-polyfill.min.js"></script>
+  <!-- main -->  
 </body>
 ```
 
