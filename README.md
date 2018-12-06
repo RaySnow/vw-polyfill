@@ -21,25 +21,18 @@
 </body>
 ```
 
-  2. use webpack/gulp/grunt inject plugin （E: [gulp-inject](https://www.npmjs.com/package/gulp-inject)）inject into html(<body> -> <script>) 
-    
-```html
-<body>
-    <script>
-    <!-- inject:/path/to/vw-polyfill.min.js -->
-//    or
-    <!-- inject:/node_modules/vw-polyfill/polyfill.min.js -->
-    <!-- endinject -->    
-    </script>
-</body>
-```
+  2. use webpack/gulp/grunt inject plugin （E: [gulp-inject](https://www.npmjs.com/package/gulp-inject)）
+
   
 ## Limitations
   1. only support vw unit, for layout, (vin/vmax/vh  X)
-  2. only support <link href=""> and <style > css in <head>, （<div style="width: 100vw">  X）
-  3. not old IEs (IE 4-8  X)
+  2. only support link and style tag css in head, （E: <div style="width: 100vw"  X）
+  3. unsupported old IEs (IE 4-8  X)
 
-## test
+## Effect
+
+![Image text](https://raw.githubusercontent.com/RaySnow/vw-polyfill/master/test/test_before.png)
+![Image text](https://raw.githubusercontent.com/RaySnow/vw-polyfill/master/test/test_after.png)
 
 ## Changelog
 
