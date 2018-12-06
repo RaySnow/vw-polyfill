@@ -3,8 +3,8 @@
 
 ## Advantage
   1. small: 1kb only
-  2. simply: test browser -> convert vw to rem -> set root font-size let 1rem=1vw  
-  3. safe: insert vw element to test browser
+  2. simply: just insert one file
+  3. safe: insert vw element to test browser -> convert vw to rem -> set root font-size let 1rem=1vw  
     
 ## Usage 
 
@@ -30,8 +30,9 @@
   3. unsupported old IEs (IE 4-8  X)
 
 ## Effect
-
+  before:
 ![Image text](https://raw.githubusercontent.com/RaySnow/vw-polyfill/master/test/test_before.png)
+  after:
 ![Image text](https://raw.githubusercontent.com/RaySnow/vw-polyfill/master/test/test_after.png)
 
 ## Changelog
