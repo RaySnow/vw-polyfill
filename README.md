@@ -30,10 +30,14 @@
   3. unsupported old IEs (IE 4-8  X)
 
 ## Effect
-  before:
-![Image text](https://raw.githubusercontent.com/RaySnow/vw-polyfill/master/test/test_before.png)
-  after:
-![Image text](https://raw.githubusercontent.com/RaySnow/vw-polyfill/master/test/test_after.png)
+
+  1. before:
+  
+  ![Image text](https://raw.githubusercontent.com/RaySnow/vw-polyfill/master/test/test_before.png)
+
+  2. after:
+  
+  ![Image text](https://raw.githubusercontent.com/RaySnow/vw-polyfill/master/test/test_after.png)
 
 ## Changelog
 
