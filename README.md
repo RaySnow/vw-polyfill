@@ -3,7 +3,7 @@
 
 ## Advantage
   1. small: 1kb only
-  2. simply: test browser is support -> convert vw to rem -> set root font-size let 1rem=1vw  
+  2. simply: test browser -> convert vw to rem -> set root font-size let 1rem=1vw  
   3. safe: insert vw element to test browser
     
 ## Usage 
