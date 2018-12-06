@@ -1,29 +1,43 @@
 # vw-polyfill
-Make viewport units (vw) work in unsupported mobile browsers
+  Make viewport units (vw) work in unsupported browsers
 
-## purpose
-  1. 为了移动端浏览器能安全的使用vw单位实现多屏适配，从而让css代码运行在各种尺寸的手机屏幕上，并且和设计稿保持一致
-  2. 技术方案为：通过js动态判断当前浏览器是否支持vw单位，如果不支持，把所有css样式中vw转为rem，并设置html font-size为当前浏览器宽度
-  的 1/100, 从而使1rem=1vw；
-  3. write once run everywhere, 开发者无需考虑多屏适配问题和vw兼容问题
-  4. 使用尽可能简单，代码量尽可能少
-
+## Advantage
+  1. small: 1kb only
+  2. simply: test browser is support -> convert vw to rem -> set root font-size let 1rem=1vw  
+  3. safe: insert vw element to test browser
+    
 ## Usage 
-  1. 下载引用
-    下载 vw-polyfill.min.js
+
+  1. download vw-polyfill.min.js  
+     or 
+     npm i vw-polyfill --save
     
 ```html
 <body>
   <script src="path/to/vw-polyfill.min.js"></script>
+  <!--or-->
+  <script src="./node_modules/vw-polyfill/vw-polyfill.min.js"></script>
   <!-- main -->  
 </body>
 ```
 
+  2. use webpack/gulp/grunt inject plugin （E: [gulp-inject](https://www.npmjs.com/package/gulp-inject)）inject into html(<body> -> <script>) 
+    
+```html
+<body>
+    <script>
+    <!-- inject:/path/to/vw-polyfill.min.js -->
+//    or
+    <!-- inject:/node_modules/vw-polyfill/polyfill.min.js -->
+    <!-- endinject -->    
+    </script>
+</body>
+```
   
-## limitations
-  1. 仅支持vw，不支持vh、vmin、vmax, 此插件的初衷是利用vw实现移动端多屏适配，而不是支持vw、vh、wmin、wmax这些单位
-  2. 只支持外链样式和styles标签的样式，不支持其他tag内的style属性样式（Example: <div style="width: 100vw">）
-  3. 未对老版本ie进行兼容
+## Limitations
+  1. only support vw unit, for layout, (vin/vmax/vh  X)
+  2. only support <link href=""> and <style > css in <head>, （<div style="width: 100vw">  X）
+  3. not old IEs (IE 4-8  X)
 
 
 ## Changelog
@@ -35,6 +49,3 @@ Make viewport units (vw) work in unsupported mobile browsers
 
 [MIT License](http://opensource.org/licenses/mit-license).
 
-## TODO
-  1. gulp、webpack打包办法
-  2. 多浏览器测试
