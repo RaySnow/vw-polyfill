@@ -27,9 +27,9 @@
 
   
 ## Limitations
-  1. only support vw unit, for layout, ([x] vin/vmax/vh)
-  2. only support link and style tag css in head, （[x] E: <div style="width: 100vw"）
-  3. unsupported old IEs ([x] IE 4-8)
+  1. only support vw unit, for layout, (vin/vmax/vh ✘)
+  2. only support link and style tag css in head, （E: <div style="width: 100vw" ✘）
+  3. unsupported old IEs (IE 4-8 ✘)
 
 ## Effect
   
