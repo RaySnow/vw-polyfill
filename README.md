@@ -14,10 +14,12 @@
     
 ```html
 <body>
+
+  <!-- main -->  
+  
   <script src="path/to/vw-polyfill.min.js"></script>
   <!--or-->
   <script src="./node_modules/vw-polyfill/vw-polyfill.min.js"></script>
-  <!-- main -->  
 </body>
 ```
 
@@ -25,19 +27,13 @@
 
   
 ## Limitations
-  1. only support vw unit, for layout, (vin/vmax/vh  X)
-  2. only support link and style tag css in head, （E: <div style="width: 100vw"  X）
-  3. unsupported old IEs (IE 4-8  X)
+  1. only support vw unit, for layout, ([x] vin/vmax/vh)
+  2. only support link and style tag css in head, （[x] E: <div style="width: 100vw"）
+  3. unsupported old IEs ([x] IE 4-8)
 
 ## Effect
-
-  1. before:
   
-  ![Image text](https://raw.githubusercontent.com/RaySnow/vw-polyfill/master/test/test_before.png)
-
-  2. after:
-  
-  ![Image text](https://raw.githubusercontent.com/RaySnow/vw-polyfill/master/test/test_after.png)
+  ![Image text](https://raw.githubusercontent.com/RaySnow/vw-polyfill/master/test/effect.png)
 
 ## Changelog
 
