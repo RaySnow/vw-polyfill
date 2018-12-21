@@ -44,3 +44,8 @@
 
 [MIT License](http://opensource.org/licenses/mit-license).
 
+
+## Suggestion
+
+[使用建议: 推荐一个做移动端多屏兼容和适配的新方案](https://github.com/RaySnow/vw-polyfill/blob/master/other.md)
+
