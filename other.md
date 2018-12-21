@@ -71,7 +71,7 @@
 2. vw兼容性如何？
     - 虽然说大部分浏览器都已经支持vw单位了，但是主流机型中，仍然有一小撮是不支持的，要不要做降级，看自己的产品对应机型做取舍了。
     - 实际测试中，会发现不支持的机型和浏览器，其实不止下图中这些，很多安卓高版本的部分浏览器也不支持。
-![](https://user-gold-cdn.xitu.io/2018/12/7/16788322379abe17?w=2508&h=1006&f=png&s=233658)
+![](https://user-gold-cdn.xitu.io/2018/12/7/16788322379abe17?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
     图一来之：[caniuse](https://caniuse.com/#search=vw)
 ![](https://user-gold-cdn.xitu.io/2018/12/7/1678832d5103588b?w=2022&h=1060&f=png&s=201105)
     图二来自文章：[再聊移动端页面的适配](https://www.w3cplus.com/css/vw-for-layout.html)
