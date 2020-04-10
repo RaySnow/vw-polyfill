@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     header = require('gulp-header');
 
-var js = "index.js";
+var js = "index-cdn.js";
 var DIST = "./";
 
 // js处理, 压缩
