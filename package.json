@@ -1,6 +1,6 @@
 {
   "name": "vw-polyfill",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "Make viewport units (vw) work in unsupported mobile browsers",
   "description": "Make viewport units (vw) work in unsupported mobile browsers",
   "homepage": "https://github.com/RaySnow/vw-polyfill",
