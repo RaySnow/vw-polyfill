@@ -13,7 +13,7 @@ var js = "index-cdn.js";
 var DIST = "./";
 
 // js处理, 压缩
-gulp.task('min_js', function () {
+gulp.task('default', function () {
   return gulp.src([js])
     .pipe(uglify())
     .pipe(stripDebug())
@@ -22,7 +22,3 @@ gulp.task('min_js', function () {
     .pipe(gulp.dest(DIST));
 });
 
-gulp.task('default',
-  [
-    'min_js'
-  ]);

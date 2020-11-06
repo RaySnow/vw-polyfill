@@ -1,6 +1,6 @@
 {
   "name": "vw-polyfill",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "title": "Make viewport units (vw) work in unsupported mobile browsers",
   "description": "Make viewport units (vw) work in unsupported mobile browsers",
   "homepage": "https://github.com/RaySnow/vw-polyfill",
@@ -30,5 +30,12 @@
     "index.js",
     "vw-polyfill.min.js"
   ],
-  "dependencies": {}
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-header": "^2.0.9",
+    "gulp-rename": "^2.0.0",
+    "gulp-strip-debug": "^3.0.0",
+    "gulp-uglify": "^3.0.2"
+  }
 }
