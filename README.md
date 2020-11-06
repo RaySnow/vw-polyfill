@@ -54,7 +54,7 @@
 ### 0.1.0 (November 21st 2020) ###
   - 支持npm方式引入
   - 支持异步加载css文件的处理 （文件加载后手动调用 'run' 方法）
-### 0.1.0 (October 21st 2020) ###
+### 0.1.0 (November 6st 2020) ###
   - 修复部分浏览器（ios微信webview）宽度无法正常获取的问题
   - ！！！不支持vw单位的浏览器，会修改<html>font-size，依赖全局font-size大小的字体会受影响，建议在<body>上添加默认font-size，不要依赖<html>的font-size
 
